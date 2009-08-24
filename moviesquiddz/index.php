@@ -57,8 +57,7 @@ echo "<td>" . $release_name . "</td>";
 
 //	##################################################
 // 	Detect Scene
-// This requires PHP 5.3.0 or higher.
-if ($feature_detect_scene == TRUE && phpversion() >= '5.3.0') {
+if ($feature_detect_scene == TRUE) {
 include("includes/feature_detect_scene.php");
 }// ##################################################
 
