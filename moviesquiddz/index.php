@@ -3,7 +3,7 @@
 // 	##################################################
 // 	Header + Version Info
 require("includes/header.php");
-$msVersion = '0.4';
+$msVersion = '0.5';
 $msDebug = TRUE; // Display advanced info, such as version number.
 //	##################################################
 
@@ -17,6 +17,7 @@ require("config.php");
 $all_releases = file($file_listing_location,FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 $scene_groups_array = file($scene_group_list,FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 $tags = file($other_tags,FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+rsort($tags); // reverse sorts, to fix errors like "HDDVD" -> "HDDVDRip" anomaly.
 //	##################################################
 
 
@@ -33,7 +34,7 @@ if ($feature_orly_link == TRUE) {echo'<td><img src="images/orly.png" alt="ORLY" 
 if ($feature_scenehd_link == TRUE) {echo'<td><img src="images/scenehd.png" alt="SceneHD" title="SceneHD.org Links" /></td>';};
 if ($feature_binsearch_link == TRUE) {echo'<td><img src="images/binsearch.png" alt="BinSearch" title="BinSearch NZB Links" /></td>';};
 if ($feature_gotnzb4u_x264_link == TRUE) {echo'<td><img src="images/gotnzb4u.png" alt="GotNZB4U" title="GotNZB4U x264 Links" /></td>';};
-if ($feature_subsource_link == TRUE) {echo'<td><img src="images/subtitlesource.png" alt="SubtitleSource" title="SubtitleSource Link" /></td>';};
+if ($feature_subsource_link == TRUE) {echo'<td><img src="images/subtitlesource.png" alt="SubSource" title="SubtitleSource Link" /></td>';};
 if ($feature_local_folder_link == TRUE) {echo'<td><img src="images/open_folder.png" alt="Open" title="Open Folder Locally" /></td>';};
 echo '</tr>';
 // 	##################################################
@@ -56,7 +57,8 @@ echo "<td>" . $release_name . "</td>";
 
 //	##################################################
 // 	Detect Scene
-if ($feature_detect_scene == TRUE) {
+// This requires PHP 5.3.0 or higher.
+if ($feature_detect_scene == TRUE && phpversion() >= '5.3.0') {
 include("includes/feature_detect_scene.php");
 }// ##################################################
 
@@ -89,7 +91,7 @@ echo '<td><a href="http://x264.rescene.info/details.aspx?Section=movies&Release=
 
 
 // ###################################################
-// 	Generate ORLD PreDB Link
+// 	Generate ORLY PreDB Link
 if ($feature_orly_link == TRUE) {
 echo '<td><a href="http://www.orlydb.com/?q='.$release_name.'"><img src="images/orly.png" /></a></td>';
 }//	##################################################

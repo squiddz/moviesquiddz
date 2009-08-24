@@ -59,28 +59,28 @@ class imdb_config {
      * @class imdb_config
      * @attribute boolean usecache
      */
-    $this->usecache = true;
+    $this->usecache = false;
     /** Store the pages retrieved for later use?
      * @class imdb_config
      * @attribute boolean storecache
      */
-    $this->storecache = true;
+    $this->storecache = false;
     /** Use zip compression for caching the retrieved html-files?
      * @class imdb_config
      * @attribute boolean usezip
      */
-    $this->usezip = true;
+    $this->usezip = false;
     /** Convert non-zip cache-files to zip (check file permissions!)?
      * @class imdb_config
      * @attribute boolean converttozip
      */
-    $this->converttozip = true;
+    $this->converttozip = false;
     /** Cache expiration - cache files older than this value (in seconds) will
      *  be automatically deleted.
      * @class imdb_config
      * @attribute integer cache_expire
      */
-    $this->cache_expire = 3600;
+    $this->cache_expire = 604800; // i.e. 1 week
     /** Where to store images retrieved from the IMDB site by the method photo_localurl().
      *  This needs to be under documentroot to be able to display them on your pages.
      * @class imdb_config
@@ -97,7 +97,7 @@ class imdb_config {
      * @class imdb_config
      * @attribute boolean debug
      */
-    $this->debug = 0;
+    $this->debug = 1;
     #--------------------------------------------------=[ TWEAKING OPTIONS ]=--
     /** Limit for the result set of searches.
      *  Use 0 for no limit, or the number of maximum entries you wish. Default
@@ -105,7 +105,7 @@ class imdb_config {
      * @class imdb_config
      * @attribute integer maxresults
      */
-    $this->maxresults = 20;
+    $this->maxresults = 10;
     /** Moviename search variant. There are different ways of searching for a
      *  movie name, with slightly differing result sets. Set the variant you
      *  prefer, either "sevec", "moonface", or "izzy". The latter one is the

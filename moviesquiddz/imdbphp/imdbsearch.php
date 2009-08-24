@@ -29,12 +29,12 @@ foreach ($results as $res) {
 	$movie   = new imdb($mid);         // create an instance of the class and pass it the IMDB ID
 	$title   = $movie->title();        // retrieve the movie title
 	$year    = $movie->year();         // obtain the year of production
-	$runtime = $movie->runtime();      // runtime in minutes
-	// $rating  = $movie->mpaa();         // array[country=>rating] of ratings
-	// $trailer = $movie->trailers();     // array of trailers
+	// $runtime = $movie->runtime();   // runtime in minutes
+	$rating  = $movie->rating();         // rating
+	// $trailer = $movie->trailers();  // array of trailers
 
   // now do something with these data
-  echo '<li><a href="http://www.imdb.com/title/tt'.$mid.'">'.$title.' ('.$year.')</a> <span>[ ' . $runtime . ' ]</span></li>';
+  echo '<li><a href="http://www.imdb.com/title/tt'.$mid.'">'.$title.' ['.$year.']</a> <span>[ ' . $rating . ' ]</span></li>';
 }
 echo '</ol>';
 

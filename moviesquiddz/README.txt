@@ -1,4 +1,6 @@
+Quote about checking scenehd list
 
+ so load them both, then loop throught the original list and inside that loop loop through the second list doinga  search
 
 	######  #######    #    ######        #     # #######
 	#     # #         # #   #     #       ##   ## #
@@ -63,8 +65,7 @@
 	Required for: "feature_local_folder_link".
 
 +	Adding your own features.
-	You will see from the source code, that it's simple to add new features. If you have any great ideas or creations,
-	the author would love to know about them! Moreover, he's more than happy to help fabricate them!
+	You will see from the source code, that it's simple to add new features. If you have any great ideas or creations, the author would love to know about them! Moreover, he's more than happy to help fabricate them!
 
 ===================
 # TROUBLESHOOTING
@@ -129,11 +130,17 @@
 # ACKNOWLEDGEMENTS
 ====================
 
-+	Some logos by FamFamFam - Silk Icon Set. See http://www.famfamfam.com/lab/icons/silk/
++	Some logos by FamFamFam - Silk Icon Set.
+	http://www.famfamfam.com/lab/icons/silk/
 
-+	IMDBphp is used for collecting IMDb data. See http://sourceforge.net/projects/imdbphp/
++	IMDBphp is used for collecting IMDb data.
+	http://sourceforge.net/projects/imdbphp/
 
-+	HighSlide is used for the IMDb Popup. See http://highslide.com/
++	HighSlide is used for the IMDb Popup.
+	http://highslide.com/
+
++	PHPro Tutorials Introduction to PHP Regex
+	http://www.phpro.org/tutorials/Introduction-to-PHP-Regex.html
 
 ================
 # CONTRIBUTORS
@@ -179,14 +186,29 @@
 ====================
 
 +	The feature_local_folder_link code generates links to the correct location on the computer, but they are unclickable in WinXP Firefox [3.5]
-	A fix is to save the page as HTML then open it locally. I think it's a security precaution. Another fix is to copy the URL
-	of the generated link and paste into a new tab/window.
+	A fix is to save the page as HTML then open it locally. I think it's a security precaution. Another fix is to copy the URL of the generated link and paste into a new tab/window.
+
++	release2movie function
 
 =============
 # CHANGELOG
 =============
 
 +	Added / Changed / BugFix / Removed
+
++	[v0.5] (## #### ####)
+	Changed	: Show Tag Meanings sorts alphabetically.
+	Changed	: Vast improvements to release2movie.php (formerly stripCrap.php)... now using regex.
+	Changed	: IMDbPHP now uses cache... created folder /imdbphp/cache. Stored for 1 week (604800s)
+	Changed	: IMDbPHP max results reduced to 10.
+	Changed	: Now OtherTags.txt should not include year list, nor S01, S02 etc..
+			  [These are now handled by regex.]
+	BugFix	: Some png files were not displaying in IE properly. Possibly due to corruption.
+	Added	: Blueprint for preferences.php - a UI for config.php.
+	Changed	: Used \t and \n to tidy generated html.
+			  [Note: must be written {echo "\n"}, not {echo '\n'}.]
+	Changed	: Moved CSS to external file.
+	Added	: OtherTags list is sorted in descending order, to fix problems like "HDDVDRip" coming after "HDDVD", and hence leaving "Rip".
 
 +	[v0.4] (06 August 2009)
 	BugFix	: IMDb Links not working.

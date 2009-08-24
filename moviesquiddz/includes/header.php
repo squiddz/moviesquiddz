@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title># | MovieSquiddz</title>
+<title>MovieSquiddz</title>
 
 <script type="text/javascript" src="../moviesquiddz/highslide/highslide-full.js"></script>
 <script type="text/javascript" src="../moviesquiddz/highslide/highslide.config.js" charset="utf-8"></script>
@@ -11,37 +11,9 @@
 <link rel="stylesheet" type="text/css" href="../moviesquiddz/highslide/highslide-ie6.css" />
 <![endif]-->
 
-
-<style type="text/css">
-div {
- font-family: Calibri, Trebuchet MS, Arial, Sans-Serif;
-}
-
-div.header {
- text-align: center;
- margin-top: 50px;
-}
-
-div.files {
- text-align: left;
- line-height:15px;
-}
-
-img {
- border:none
-}
-
-a {
- color: #6CCC26;
- text-decoration:none;
- outline:none;
-}
-
-a:hover {
- color: #2577EA;
-}
-
-</style>
+<head>
+<link rel="stylesheet" type="text/css" href="/moviesquiddz/includes/style.css" />
+</head>
 
 <script type="text/javascript">
     hs.graphicsDir = '../moviesquiddz/highslide/graphics/';
@@ -55,5 +27,5 @@ a:hover {
 
 <body>
 
-<h1><a href="../moviesquiddz" alt="Home">HOME</a> > MovieSquiddz</h1>
+<h1><a href="/" alt="Home">HOME</a> > MovieSquiddz</h1>
 
