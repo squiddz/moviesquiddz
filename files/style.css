@@ -1,0 +1,27 @@
+div {
+ font-family: Calibri, Trebuchet MS, Arial, Sans-Serif;
+}
+
+div.header {
+ text-align: center;
+ margin-top: 50px;
+}
+
+div.files {
+ text-align: left;
+ line-height:15px;
+}
+
+img {
+ border:none
+}
+
+a {
+ color: #6CCC26;
+ text-decoration:none;
+ outline:none;
+}
+
+a:hover {
+ color: #2577EA;
+}
