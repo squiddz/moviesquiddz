@@ -1,6 +1,3 @@
-Quote about checking scenehd list
-
- so load them both, then loop throught the original list and inside that loop loop through the second list doinga  search
 
 	######  #######    #    ######        #     # #######
 	#     # #         # #   #     #       ##   ## #
@@ -16,6 +13,8 @@ Quote about checking scenehd list
 ===========
 
 +	Please get in touch with any comments, questions or suggestions: squiddz@gmail.com
+
++	Get the latest version from http://github.com/squiddz/moviesquiddz/tree/remote
 
 =========
 # SETUP
@@ -174,12 +173,10 @@ Quote about checking scenehd list
 # KNOWN SHORTCOMINGS
 ======================
 
-+ 	Very inefficient, clunky and poorly coded (doesn't even use MySQL)!
++ 	Very inefficient, clunky and poorly coded!
 
 +	feature_local_folder_link does not work in IE. Get Firefox or another real browser! Also very buggy. Probably best to just set
 	$feature_local_folder_link = FALSE; in 'config.php'!
-
-+	In OtherTags.txt it is essential to put - for example - "HDDVDRip" before "HDDVD", so that ".HDDVDRip" is stripped before ".HDDVD". Otherwise we end up with "16.BlocksRip" as $movie_name for "16.Blocks.2006.720p.HDDVDRip.x264-SEPTiC" etc.
 
 ====================
 # ANOMALIES / BUGS
@@ -187,8 +184,6 @@ Quote about checking scenehd list
 
 +	The feature_local_folder_link code generates links to the correct location on the computer, but they are unclickable in WinXP Firefox [3.5]
 	A fix is to save the page as HTML then open it locally. I think it's a security precaution. Another fix is to copy the URL of the generated link and paste into a new tab/window.
-
-+	release2movie function
 
 =============
 # CHANGELOG
