@@ -27,7 +27,7 @@ $feature_imdb_search_link 	= 	TRUE; 	// Link to direct IMDB movie search. [Grey 
 $feature_rt_link 			= 	TRUE; 	// Link to Rotten Tomatoes search [http://www.rottentomatoes.com/].
 
 // Scene Related Links
-$feature_nfo_link 			= 	TRUE; 	// Link to _______ for NFOs.
+$feature_nfo_link 			= 	FALSE; 	// Link to _______ for NFOs.
 $feature_rescene_link 		= 	TRUE; 	// Link to ReScene.Info [http://rescene.info/].
 $feature_orly_link			=	TRUE;	// Link to ORLYdb - check nuke status, size and file-count. [http://www.orlydb.com/]
 
