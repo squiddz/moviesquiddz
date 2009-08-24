@@ -1,0 +1,17 @@
+<?php
+
+// ##################################################
+// Generate Rotten Tomatoes links.              START
+// ##################################################
+
+// Call function release2movie() to extract movie name from release name.
+include_once("../moviesquiddz/includes/release2movie.php");
+$movie_name = release2movie($release_name, $tags);
+
+echo '<td><a href="http://www.rottentomatoes.com/search/full_search.php?search=' . $movie_name . '"><img src="images/rt.png" /></a></td>';
+
+// ##################################################
+// Generate Rotten Tomatoes links.                END
+// ##################################################
+
+?>
