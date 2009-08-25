@@ -11,6 +11,8 @@ $file_listing_location='files/FileListing.txt';
 $scene_group_list='files/SceneGroups.txt';
 $other_tags='files/OtherTags.txt';
 $release_dirs = '../release_dir_1';	// array("../release_dir_1","../release_dir_1"); // Release directories. [ UNSTABLE ]
+$scenehd_list_location = 'files/SceneHDList.txt'; // 'http://scenehd.org/list';
+$scenehd_reqlist_location = 'files/SceneHDReqList.txt'; // 'http://scenehd.org/reqlist';
 	
 //	##################################################
 //	Select which features to enable.
@@ -27,12 +29,13 @@ $feature_imdb_search_link 	= 	TRUE; 	// Link to direct IMDB movie search. [Grey 
 $feature_rt_link 			= 	TRUE; 	// Link to Rotten Tomatoes search [http://www.rottentomatoes.com/].
 
 // Scene Related Links
-$feature_nfo_link 			= 	FALSE; 	// Link to _______ for NFOs.
+$feature_nfo_link 			= 	TRUE; 	// Link to _______ for NFOs.
 $feature_rescene_link 		= 	TRUE; 	// Link to ReScene.Info [http://rescene.info/].
 $feature_orly_link			=	TRUE;	// Link to ORLYdb - check nuke status, size and file-count. [http://www.orlydb.com/]
 
 // FileSharing Links
-$feature_scenehd_link		=	TRUE;	// Link to SceneHD.org [http://www.scenehd.org/].
+$feature_scenehd_link		=	FALSE;	// Basic SceneHD.org search. Pointless when used in conjunction with feature_scenehd_reseed.
+$feature_scenehd_reseed		=	TRUE;	// As above, but checks torrent status and changed logo colour accordingly. 
 $feature_binsearch_link		=	TRUE;	// Link to BinSearch NZB Search engine [http://www.binsearch.info/].
 $feature_gotnzb4u_x264_link	=	TRUE;	// Link to GotNZB4U x264 [http://www.gotnzb4u.me.uk/x264/].
 

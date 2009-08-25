@@ -10,19 +10,14 @@
 <!--[if lt IE 7]>
 <link rel="stylesheet" type="text/css" href="../moviesquiddz/highslide/highslide-ie6.css" />
 <![endif]-->
-
-<head>
 <link rel="stylesheet" type="text/css" href="/moviesquiddz/includes/style.css" />
-</head>
-
-<script type="text/javascript">
-    hs.graphicsDir = '../moviesquiddz/highslide/graphics/';
-    hs.outlineType = 'rounded-white';
-    hs.wrapperClassName = 'draggable-header';
-	hs.showCredits = false;
-	hs.align = 'center';
+<script type="text/javascript"> 
+hs.graphicsDir = '../moviesquiddz/highslide/graphics/';
+hs.outlineType = 'rounded-white';
+hs.wrapperClassName = 'draggable-header';
+hs.showCredits = false;
+hs.align = 'center';
 </script>
-
 </head>
 
 <body>
