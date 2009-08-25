@@ -25,7 +25,7 @@ $feature_detect_scene 		= 	TRUE; 	// Adds a tick or cross depending on whether t
 
 // Movie Site Links
 $feature_imdb_link 			= 	TRUE; 	// Link to AJAX popup list of suggested IMDB titles. [http://www.imdb.com/].
-$feature_imdb_search_link 	= 	TRUE; 	// Link to direct IMDB movie search. [Grey IMDB logo].
+$feature_imdb_search_link 	= 	FALSE; 	// Link to direct IMDB movie search. [Grey IMDB logo].
 $feature_rt_link 			= 	TRUE; 	// Link to Rotten Tomatoes search [http://www.rottentomatoes.com/].
 
 // Scene Related Links

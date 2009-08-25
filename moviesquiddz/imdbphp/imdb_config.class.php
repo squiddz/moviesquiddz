@@ -59,28 +59,28 @@ class imdb_config {
      * @class imdb_config
      * @attribute boolean usecache
      */
-    $this->usecache = false;
+    $this->usecache = true;
     /** Store the pages retrieved for later use?
      * @class imdb_config
      * @attribute boolean storecache
      */
-    $this->storecache = false;
+    $this->storecache = true;
     /** Use zip compression for caching the retrieved html-files?
      * @class imdb_config
      * @attribute boolean usezip
      */
-    $this->usezip = false;
+    $this->usezip = true;
     /** Convert non-zip cache-files to zip (check file permissions!)?
      * @class imdb_config
      * @attribute boolean converttozip
      */
-    $this->converttozip = false;
+    $this->converttozip = true;
     /** Cache expiration - cache files older than this value (in seconds) will
      *  be automatically deleted.
      * @class imdb_config
      * @attribute integer cache_expire
      */
-    $this->cache_expire = 604800; // i.e. 1 week
+    $this->cache_expire = 604800; // 604800sec = 1 week
     /** Where to store images retrieved from the IMDB site by the method photo_localurl().
      *  This needs to be under documentroot to be able to display them on your pages.
      * @class imdb_config

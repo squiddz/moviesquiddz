@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>MovieSquiddz</title>
 
-<script type="text/javascript" src="../moviesquiddz/highslide/highslide-full.js"></script>
-<script type="text/javascript" src="../moviesquiddz/highslide/highslide.config.js" charset="utf-8"></script>
-<link rel="stylesheet" type="text/css" href="../moviesquiddz/highslide/highslide.css" />
+<script type="text/javascript" src="highslide/highslide-full.js"></script>
+<script type="text/javascript" src="highslide/highslide.config.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="highslide/highslide.css" />
 <!--[if lt IE 7]>
-<link rel="stylesheet" type="text/css" href="../moviesquiddz/highslide/highslide-ie6.css" />
+<link rel="stylesheet" type="text/css" href="highslide/highslide-ie6.css" />
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="/moviesquiddz/includes/style.css" />
+<link rel="stylesheet" type="text/css" href="includes/style.css" />
 <script type="text/javascript"> 
-hs.graphicsDir = '../moviesquiddz/highslide/graphics/';
+hs.graphicsDir = 'highslide/graphics/';
 hs.outlineType = 'rounded-white';
 hs.wrapperClassName = 'draggable-header';
 hs.showCredits = false;

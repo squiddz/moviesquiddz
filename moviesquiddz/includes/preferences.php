@@ -10,7 +10,7 @@
 <li>You still need to enter most settings by editing config.php</li>
 <li>Bookmark the URL so use the same settings on each visit.</li>
 <li>Remember to build your own FileListing.txt, SceneGroups.txt and OtherTags.txt</li>
-<li>See the <a href="http://olliebennett.co.uk/moviesquiddz/README.txt">ReadMe</a> for more info!</li>
+<li>See the <a href="http://wiki.github.com/squiddz/moviesquiddz">Wiki</a> for more info!</li>
 <ul>
 
 <form action="../index.php" method="post">
