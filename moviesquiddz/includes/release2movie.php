@@ -19,10 +19,10 @@ function release2movie($release_name, $tags) {
 		// At this point, we want to record all the matching tags in a new array.
 		// First determine whether there's a match...
 		// search release name for the tag...
-		preg_match($regex,$release_name,$matches);
+		//preg_match($regex,$release_name,$matches);
 		// $matches[0] contains the text that matched the full pattern.
-		echo $matches[0];
-		$found_tags[] = $tag; // add the tag to our new array.
+		//echo $matches[0];
+		//$found_tags[] = $tag; // add the tag to our new array.
 		// array_push is not used, because it warns if first argument is not an array.
 
 
