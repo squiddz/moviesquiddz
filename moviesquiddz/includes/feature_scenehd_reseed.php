@@ -39,11 +39,11 @@ if (isset($scenehd_release)) {
 	if ($scenehd_release_exploded[3] == 0) { 
 	
 		// we need to take the torrent id and make a link.
-		echo '<td><a href="https://scenehd.org/details.php?id='.$scenehd_release_exploded[2].'"><img src="images/scenehd-red.png" /></a></td>'; // Dead
+		echo '<td sorttable_customkey="4"><a href="https://scenehd.org/details.php?id='.$scenehd_release_exploded[2].'"><img src="images/scenehd-red.png" /></a></td>'; // Dead
 	
 	} else { // it is seeded.
 	
-		echo '<td><a href="https://scenehd.org/details.php?id='.$scenehd_release_exploded[2].'"><img src="images/scenehd.png" /></a></td>'; // All OKAY
+		echo '<td sorttable_customkey="1"><a href="https://scenehd.org/details.php?id='.$scenehd_release_exploded[2].'"><img src="images/scenehd.png" /></a></td>'; // All OKAY
 	
 	}
 	
@@ -59,13 +59,13 @@ if (isset($scenehd_release)) {
 	
 		// release is requested - please upload!
 		// generate link to search result for that request.
-		echo '<td><a href="https://scenehd.org/requests.php?search='.$release_name.'"><img src="images/scenehd-blue.png" /></a></td>'; // Requested
+		echo '<td sorttable_customkey="3"><a href="https://scenehd.org/requests.php?search='.$release_name.'"><img src="images/scenehd-blue.png" /></a></td>'; // Requested
 	} else {
 	// it's not in requests either
 	// so it's not on scenehd at all. Please upload it!	
 	// note, it could still be in a pack somewhere on scenehd,
 	// ... so search those too before uploading!
-	echo '<td><img src="images/scenehd-yellow.png" /></td>'; // Not Found
+	echo '<td sorttable_customkey="2"><img src="images/scenehd-yellow.png" /></td>'; // Not Found
 
 }
 

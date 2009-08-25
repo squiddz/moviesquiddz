@@ -17,9 +17,9 @@ if (in_array($group_name, $scene_groups_array)) {
 
 // If it's still FALSE after all these tests, then it's not scene..!
 if ($is_scene == FALSE) {
-	echo '<td><img src="images/non-scene.png" /></td>';
+	echo '<td sorttable_customkey="2"><img src="images/non-scene.png" /></td>';
 } else {
-	echo '<td><img src="images/scene.png" /></td>';
+	echo '<td sorttable_customkey="1"><img src="images/scene.png" /></td>';
 }
 
 ?>

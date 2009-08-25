@@ -22,20 +22,20 @@ rsort($tags); // reverse sorts, to fix errors like "HDDVD" -> "HDDVDRip" anomaly
 
 // 	##################################################
 // 	Create Table Top Row
-echo '<table border="1">'."\n".'<tr><td><strong>Name</strong></td>';
-if ($feature_detect_scene == TRUE) {echo'<td><img src="images/question.png" alt="S" title="Scene [tick] or Non-Scene [cross]" /></td>';};
-if ($feature_imdb_link == TRUE) {echo'<td><img src="images/imdb.png" alt="IMDB" title="IMDB Popup Links" /></a></td>';};
-if ($feature_imdb_search_link == TRUE) {echo'<td><img src="images/imdb_grey.png" alt="IMDB" title="IMDB External Search Links" /></a></td>';};
-if ($feature_rt_link == TRUE) {echo'<td><img src="images/rt.png" alt="RT" title="Rotten Tomatoes Search Links" /></td>';};
-if ($feature_nfo_link == TRUE) {echo'<td><img src="images/info.png" alt="NFO" title="NFO Links" /></td>';};
-if ($feature_rescene_link == TRUE) {echo'<td><img src="images/rescene.png" alt="RS" title="ReScene Links" /></td>';};
-if ($feature_orly_link == TRUE) {echo'<td><img src="images/orly.png" alt="ORLY" title="ORLY PreDB Links" /></td>';};
-if ($feature_scenehd_link == TRUE) {echo'<td><img src="images/scenehd.png" alt="SceneHD" title="SceneHD.org Links" /></td>';};
-if ($feature_scenehd_reseed == TRUE) {echo'<td><img src="images/scenehd-bw.png" alt="SceneHD" title="SceneHD.org Links" /></td>';};
-if ($feature_binsearch_link == TRUE) {echo'<td><img src="images/binsearch.png" alt="BinSearch" title="BinSearch NZB Links" /></td>';};
-if ($feature_gotnzb4u_x264_link == TRUE) {echo'<td><img src="images/gotnzb4u.png" alt="GotNZB4U" title="GotNZB4U x264 Links" /></td>';};
-if ($feature_subsource_link == TRUE) {echo'<td><img src="images/subtitlesource.png" alt="SubSource" title="SubtitleSource Link" /></td>';};
-if ($feature_local_folder_link == TRUE) {echo'<td><img src="images/open_folder.png" alt="Open" title="Open Folder Locally" /></td>';};
+echo '<table class="sortable" border="1">'."\n".'<tr><th><strong>Name</strong></th>';
+if ($feature_detect_scene == TRUE) {echo'<th><img src="images/question.png" alt="S" title="Scene [tick] or Non-Scene [cross]" /></th>';};
+if ($feature_imdb_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/imdb.png" alt="IMDB" title="IMDB Popup Links" /></a></th>';};
+if ($feature_imdb_search_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/imdb_grey.png" alt="IMDB" title="IMDB External Search Links" /></a></th>';};
+if ($feature_rt_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/rt.png" alt="RT" title="Rotten Tomatoes Search Links" /></th>';};
+if ($feature_nfo_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/info.png" alt="NFO" title="NFO Links" /></th>';};
+if ($feature_rescene_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/rescene.png" alt="RS" title="ReScene Links" /></th>';};
+if ($feature_orly_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/orly.png" alt="ORLY" title="ORLY PreDB Links" /></th>';};
+if ($feature_scenehd_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/scenehd.png" alt="SceneHD" title="SceneHD.org Links" /></th>';};
+if ($feature_scenehd_reseed == TRUE) {echo'<th><img src="images/scenehd-bw.png" alt="SceneHD" title="SceneHD.org Links" /></th>';};
+if ($feature_binsearch_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/binsearch.png" alt="BinSearch" title="BinSearch NZB Links" /></th>';};
+if ($feature_gotnzb4u_x264_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/gotnzb4u.png" alt="GotNZB4U" title="GotNZB4U x264 Links" /></th>';};
+if ($feature_subsource_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/subtitlesource.png" alt="SubSource" title="SubtitleSource Link" /></th>';};
+if ($feature_local_folder_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/open_folder.png" alt="Open" title="Open Folder Locally" /></th>';};
 echo '</tr>'."\n";
 // 	##################################################
 
