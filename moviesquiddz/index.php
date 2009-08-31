@@ -6,10 +6,12 @@ require("includes/header.php");
 $msDebug = TRUE; // Display advanced info.
 //	##################################################
 
+
 // 	##################################################
 // 	Configuration Settings
 require("config.php");
 //	##################################################
+
 
 //	##################################################
 //	Convert files into arrays for use in the script!
@@ -17,6 +19,7 @@ $all_releases = file($file_listing_location,FILE_IGNORE_NEW_LINES | FILE_SKIP_EM
 $scene_groups_array = file($scene_group_list,FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 $tags = file($other_tags,FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 rsort($tags); // reverse sorts, to fix errors like "HDDVD" -> "HDDVDRip" anomaly.
+$gotnzb4u_requests = file_get_contents($gotnzb4u_requests_location,FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 //	##################################################
 
 
@@ -33,7 +36,7 @@ if ($feature_orly_link == TRUE) {echo'<th class="sorttable_nosort"><img src="ima
 if ($feature_scenehd_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/scenehd.png" alt="SceneHD" title="SceneHD.org Links" /></th>';};
 if ($feature_scenehd_reseed == TRUE) {echo'<th><img src="images/scenehd-bw.png" alt="SceneHD" title="SceneHD.org Links" /></th>';};
 if ($feature_binsearch_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/binsearch.png" alt="BinSearch" title="BinSearch NZB Links" /></th>';};
-if ($feature_gotnzb4u_x264_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/gotnzb4u.png" alt="GotNZB4U" title="GotNZB4U x264 Links" /></th>';};
+if ($feature_gotnzb4u_x264_link == TRUE) {echo'<th><img src="images/gotnzb4u.png" alt="GotNZB4U" title="GotNZB4U x264 Links" /></th>';};
 if ($feature_subsource_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/subtitlesource.png" alt="SubSource" title="SubtitleSource Link" /></th>';};
 if ($feature_local_folder_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/open_folder.png" alt="Open" title="Open Folder Locally" /></th>';};
 echo '</tr>'."\n";
@@ -145,7 +148,7 @@ echo '<td><a href="http://www.binsearch.info/?q='.$release_name.'&max=250&adv_ag
 // 	##################################################
 // 	Generate GotNZB4U x264 Search Link
 if ($feature_gotnzb4u_x264_link == TRUE) {
-echo '<td><a href="http://www.gotnzb4u.me.uk/x264/requests.php?release='.$release_name.'&age=365&status=FILLED&sort=FILLED&reverse=on"><img src="images/gotnzb4u.png" /></a></td>';
+include("includes/feature_gotnzb4u_x264_link.php");
 }// ##################################################
 
 // 	##################################################

@@ -13,6 +13,8 @@ $other_tags='files/OtherTags.txt';
 $release_dirs = '../release_dir_1';	// array("../release_dir_1","../release_dir_1"); // Release directories. [ UNSTABLE ]
 $scenehd_list_location = 'files/SceneHDList.txt'; // 'http://scenehd.org/list';
 $scenehd_reqlist_location = 'files/SceneHDReqList.txt'; // 'http://scenehd.org/reqlist';
+$gotnzb4u_requests_location='files/requests-list.txt';
+
 	
 //	##################################################
 //	Select which features to enable.

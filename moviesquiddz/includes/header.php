@@ -4,14 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>MovieSquiddz</title>
 
-<script type="text/javascript" src="highslide/highslide-full.js"></script>
-<script type="text/javascript" src="highslide/highslide.config.js" charset="utf-8"></script>
-<script src="includes/sorttable.js"></script>
 <link rel="stylesheet" type="text/css" href="highslide/highslide.css" />
 <!--[if lt IE 7]>
 <link rel="stylesheet" type="text/css" href="highslide/highslide-ie6.css" />
 <![endif]-->
 <link rel="stylesheet" type="text/css" href="includes/style.css" />
+<link rel="shortcut icon" href="favicon.ico">
+
+<script type="text/javascript" src="highslide/highslide-full.js"></script>
+<script type="text/javascript" src="highslide/highslide.config.js" charset="utf-8"></script>
+<script src="includes/sorttable.js"></script>
 <script type="text/javascript"> 
 hs.graphicsDir = 'highslide/graphics/';
 hs.outlineType = 'rounded-white';
@@ -19,6 +21,7 @@ hs.wrapperClassName = 'draggable-header';
 hs.showCredits = false;
 hs.align = 'center';
 </script>
+
 </head>
 
 <body>
