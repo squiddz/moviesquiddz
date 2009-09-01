@@ -1,10 +1,4 @@
-<html>
-<head>
-<title>Preferences</title>
-</head>
 
-<body>
-<h1>MovieSquiddz Preferences [ NOT WORKING YET ]</h1>
 <h2>Notes:</h2>
 <ul>
 <li>You still need to enter most settings by editing config.php</li>
@@ -28,7 +22,3 @@
 <p><input type="submit" value="Save Preferences" /> or <input type="reset" value="Restore Defaults" /></p>
 
 </form>
-
-
-</body>
-</html>

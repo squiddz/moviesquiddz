@@ -5,6 +5,10 @@
 //	##################################################
 //				CONFIGURATION
 //	##################################################
+
+// Enable/Disable Debug Mode
+$msDebug = TRUE;
+
 //	Set the location of your list files:
 
 $file_listing_location='files/FileListing.txt';

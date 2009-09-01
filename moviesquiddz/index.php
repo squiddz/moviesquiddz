@@ -3,7 +3,6 @@
 // 	##################################################
 // 	Header + Version Info
 require("includes/header.php");
-$msDebug = TRUE; // Display advanced info.
 //	##################################################
 
 
