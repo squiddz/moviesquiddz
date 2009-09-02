@@ -1,66 +1,59 @@
 <?php
 
-// Define function: "release2movie".
-// ...to snip the Release name to the length of the movie title - removing all the details, (resolution, group.name etc.)
+// Convert release name to movie name.
+// ... whilst saving groupname and storing stripped tags.
+// NOTE: Works in 5.3.0 only...  NO idea why!
 
-function release2movie($release_name, $tags) {
+// First cut the release group off the end...
+$splitRelease = explode('-',$release_name); // split the release at the "-".
 
-	// First things first, define which variables will be global.
-	global $tag_stack;
+// The part after the dash is the groupname.
+$group_name = $splitRelease[1];
+// alternatively... $group_name = array_pop(explode('-',$release_name));
+
+// Take the first section only.
+$hacked_release_name = $splitRelease[0];
+
+// Go through each of the scene tags one by one...
+foreach ($tags as $tag) {
 	
+	// Define the regular expression...
+	$regex = '/\.'.$tag.'/i';
 	
-	// First cut the release group off the end...
-	$splitRelease = explode('-',$release_name); // split the release at the "-". 
-	$release_name = $splitRelease[0]; // take only the first part (before first dash)
+	//$numberoftimesthereplacementwasmade = 0; 
 	
-	// the following works in 5.3.0 only...  NO idea why!
-	foreach ($tags as $tag) {
-		$regex = '/\.'.$tag.'/i'; // set the regular expressions..
-
-		// At this point, we want to record all the matching tags in a new array.
-		// First determine whether there's a match...
-		// search release name for the tag...
-		// array_push(); is not used because it requires a predefined array.
-		// NOTE: the method used will result eventually in an extremely large array, with many duplicates.
-		//}
-
-		$numberoftimesthereplacementwasmade = 0; 
-		$release_name = preg_replace($regex, '', $release_name,-1,$numberoftimesthereplacementwasmade);
+	// Replace any instance of the regex with '' (nothing).
+	// Simultaneously, output the number of replacements made.
+	$hacked_release_name = preg_replace($regex, '', $hacked_release_name,-1,$num_of_replacements_made);
+	
+	// If at least one replacement was made, we want to add the current tag to an array of used tags.
+	// num_of_replacements_made is not zero, and show_tag_meanings is enabled...
+	if ($num_of_replacements_made != 0 && $show_tag_meanings == TRUE){
 		
-		if ($numberoftimesthereplacementwasmade != 0) {
-		// ie if at least one was made..
-		
-		// append $tag to array, for later use in show_tag_meanings.
+		// append $tag to $tag_stack array...
 		$tag_stack[] = $tag;
-		// due to the way in which this function will be called more than once,
-		// if a
+		// Note: array_push(); is not used because it requires a predefined array.
+		// Caution: This method will eventually result in an extremely large array, with many duplicates.
 		
-		// might be more efficient to use...
-		// if ($numberoftimesthereplacementwasmade != 0 && $show_tag_meanings == TRUE) {
-		// but that'd need global variable or something, and it might just be better to
-		// create the tag_stack array regardless.
-		
-		}
-	}	
-	
-	// We want to do the same with episode numbers... S01E01 etc.
-	// I think we can assume it will not exceed S39 nor E59!
-	// Note: "\d" - Matches any numeric character - same as [0-9]
-	// and "/i" makes it case insensitive...
-	$regex = '/\.S[0-3]\dE[0-5]\d/i';
-	
-	$release_name = preg_replace($regex, '', $release_name);
-	
-	// ... and with years... ie 4 consecutive numbers starting 1 or 2.
-	// second, third and fourth characters can be 0-9.
-	// we don't need case insensitivity here either!
-	$regex = '/\.[1-2]\d\d\d/';
-	$release_name = preg_replace($regex, '', $release_name);
-	
-	// We also want to return the movie name with spaces, as IMDb and (especially) RottenTomatoes handles dotted search terms badly.
-	$movie_name = str_replace(".","+",$release_name);
-	
-	return $movie_name;
-}
+	} // end if.
+} // end foreach.
+
+// We want to do the same with episode numbers... S01E01 etc.
+// I think we can assume it will not exceed S39 nor E59!
+// Define a new regex.
+$regex = '/\.S[0-3]\dE[0-5]\d/i';
+// Note: "\d" - Matches any numeric character - same as [0-9]
+// and "/i" makes it case insensitive...
+
+// Then do a reqular expression replacement, as before.
+$hacked_release_name = preg_replace($regex, '', $hacked_release_name);
+
+// ... and finally with years... ie 4 consecutive numbers where the first is 1 or 2.
+$regex = '/\.[1-2]\d\d\d/';
+$hacked_release_name = preg_replace($regex, '', $hacked_release_name);
+
+// Finally, we convert dots in the movie_name to spaces..
+// which are handled by search engines more effectively.
+$movie_name = str_replace("."," ",$hacked_release_name);
 
 ?>

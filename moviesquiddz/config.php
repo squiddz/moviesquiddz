@@ -49,5 +49,7 @@ $feature_gotnzb4u_x264_link	=	TRUE;	// Link to GotNZB4U x264 [http://www.gotnzb4
 $feature_subsource_link		=	TRUE;	// Link to SubtitleSource Search [http://www.subtitlesource.org/].
 $feature_local_folder_link	=	TRUE;	// [ UNSTABLE ] Link to local folder containing release.
 $show_tag_meanings			=	TRUE;	// Show a list of scene tags in footer, linked to scenelingo.
+$show_movie_name			=	TRUE;
+$show_group_name			=	TRUE;
 
 ?>

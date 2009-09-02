@@ -25,6 +25,8 @@ $gotnzb4u_requests = file_get_contents($gotnzb4u_requests_location,FILE_IGNORE_N
 // 	##################################################
 // 	Create Table Top Row
 echo '<table class="sortable" border="1">'."\n".'<tr><th><strong>Name</strong></th>';
+if ($show_movie_name == TRUE) {echo'<th>Movie Name</th>';};
+if ($show_group_name == TRUE) {echo'<th>Group Name</th>';};
 if ($feature_detect_scene == TRUE) {echo'<th><img src="images/question.png" alt="S" title="Scene [tick] or Non-Scene [cross]" /></th>';};
 if ($feature_imdb_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/imdb.png" alt="IMDB" title="IMDB Popup Links" /></a></th>';};
 if ($feature_imdb_search_link == TRUE) {echo'<th class="sorttable_nosort"><img src="images/imdb_grey.png" alt="IMDB" title="IMDB External Search Links" /></a></th>';};
@@ -70,19 +72,22 @@ $scenehd_reqlist_num = current($scenehd_reqlist);
 // destroy the first element of the array
 unset($scenehd_list[0]);
 unset($scenehd_reqlist[0]);
-
 // now we have complete arrays of releases and requests.
-
 } //##################################################
 
 
 // TAKE EACH RELEASE IN TURN >>>
 foreach ($all_releases as $release_name) {
-// Begin a new row for the release.
-echo "<tr>";
-// Display Release Name
-echo "<td>".$release_name."</td>";
 
+// 	##################################################
+// 	Calculate common variables (moviename, groupname etc).
+require("includes/release2movie.php");
+//	##################################################
+
+// Begin a new row for the release.
+echo "<tr><td>".$release_name."</td>"; // Display Release Name
+if ($show_movie_name == TRUE) {echo"<td>".$movie_name."</td>";}; // Display Movie Name
+if ($show_group_name == TRUE) {echo"<td>".$group_name."</td>";}; // Display Group Name
 
 //	##################################################
 // 	Detect Scene
@@ -90,18 +95,23 @@ if ($feature_detect_scene == TRUE) {
 include("includes/feature_detect_scene.php");
 }// ##################################################
 
-
 //	##################################################
 // 	Generate IMDB links
 if ($feature_imdb_link == TRUE) {
-include("includes/feature_imdb_link.php");
+echo '<td><a href="imdbphp/imdbsearch.php?name='.$movie_name.'&searchtype=movie" onclick="return hs.htmlExpand(this, { objectType: '."'".'ajax'."'".', width: '."'".'500'."'".', headingText: '."'".'IMDb Information'."'".', wrapperClassName: '."'".'titlebar'."'".' } )"><img src="images/imdb.png" /></a></td>';
 }// ##################################################
 
+
+//	##################################################
+// 	Generate IMDB manual search links
+if ($feature_imdb_search_link == TRUE) {
+echo '<td><a href="http://www.imdb.com/find?s=tt&q='.$movie_name.'"><img src="images/imdb_grey.png" /></a></td>';
+}// ##################################################
 
 // 	##################################################
 // 	Generate Rotten Tomatoes links
 if ($feature_rt_link == TRUE) {
-include("includes/feature_rt_link.php");
+echo '<td><a href="http://www.rottentomatoes.com/search/full_search.php?search='.$movie_name.'"><img src="images/rt.png" /></a></td>';
 }//	##################################################
 
 
@@ -156,7 +166,6 @@ if ($feature_subsource_link == TRUE) {
 echo '<td><a href="http://www.subtitlesource.org/search/'.$release_name.'"><img src="images/subtitlesource.png" /></a></td>';
 }// ##################################################
 
-
 // ###################################################
 // 	Local Folder
 if ($feature_local_folder_link == TRUE) {
@@ -165,7 +174,6 @@ echo '<td><a href="' . $release_dirs . "/" . $release_name . '"><img src="images
 
 echo '</tr>'."\n"; // close the last row.
 } // This is the end of the foreach loop.
-  // PHP will now return and find the next release to manage.
 echo '</table>'; // Now we're outside the loop, close the table..
 
 // 	##################################################
