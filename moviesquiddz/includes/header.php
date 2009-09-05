@@ -22,9 +22,15 @@ hs.showCredits = false;
 hs.align = 'center';
 </script>
 
+<script type="text/javascript" language="JavaScript"><!--
+function RemoveContent(d) {
+document.getElementById(d).style.display = "none";
+}
+//--></script>
+
 </head>
 
 <body>
 
-<h1><a href="/" alt="Home">HOME</a> > MovieSquiddz</h1>
+<h1><a href="/" alt="Home">HOME</a> &bull; MovieSquiddz</h1>
 

@@ -12,8 +12,33 @@ div.files {
  line-height:15px;
 }
 
+div.warningbar {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 20px;
+	background: #fff;
+	text-align: center;
+	border-bottom: 3px dotted #000;
+}
+
+span.left {
+	float:left;
+	margin-left: 10px;
+}
+
+span.right {
+	float: right;
+	margin-right: 2px;
+}
+
 img {
- border:none
+	border:none
+}
+
+img.lowdown {
+	margin-bottom : -3px;
 }
 
 a {

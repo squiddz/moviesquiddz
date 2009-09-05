@@ -1,10 +1,22 @@
-<?php
+<?php // release2movie.php
+      // NOTE: Works in 5.3.0 only...  NO idea why!
 
 // Convert release name to movie name.
 // ... whilst saving groupname and storing stripped tags.
-// NOTE: Works in 5.3.0 only...  NO idea why!
 
-// First cut the release group off the end...
+// eg 1: 	$release_name = "7eventy.5ive.2007.STV.720p.BluRay.x264-HDEX";
+//			... gives ...
+//			$movie_name = "7eventy 5ive";
+//			$group_name = "HDEX";
+//			... and adds "STV","720p","BluRay","x264" tags to the $tag_stack array.
+
+// eg 2: 	$release_name = "The.Good.The.Bad.and.The.Ugly.1966.2Disc.AC3D.5.1.720p.HDTV.x264.READ.NFO-4HM";
+//			... gives ...
+//			$movie_name = "The Good The Bad and The Ugly";
+//			$group_name = "4HM";
+//			... and adds "2Disc","AC3D.5.1","720p","HDTV","x264","READ.NFO" tags to the $tag_stack array.
+
+// First, cut the release group off the end...
 $splitRelease = explode('-',$release_name); // split the release at the "-".
 
 // The part after the dash is the groupname.
@@ -20,7 +32,7 @@ foreach ($tags as $tag) {
 	// Define the regular expression...
 	$regex = '/\.'.$tag.'/i';
 	
-	//$numberoftimesthereplacementwasmade = 0; 
+	$num_of_replacements_made=0;
 	
 	// Replace any instance of the regex with '' (nothing).
 	// Simultaneously, output the number of replacements made.
