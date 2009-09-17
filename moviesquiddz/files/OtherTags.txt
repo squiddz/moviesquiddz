@@ -42,6 +42,7 @@ RERIP
 SAMPLE.FIX
 SampleFix
 Scratch.Free
+Special.Edition
 STV
 SubFix
 SUBPACK

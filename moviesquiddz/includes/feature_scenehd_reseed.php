@@ -1,4 +1,4 @@
-<?php // Feature: SceneHD Reseed.
+<?php // feature_scenehd_reseed.php
  
 // This module compares the release with the list from scenehd.org/list
 // to show whether a release is uploaded, needs reseeding or whatever.
@@ -38,11 +38,11 @@ $scenehd_release_exploded = explode('###',$scenehd_release);
 if ($scenehd_release_exploded[3] == 0) {
  
 // we need to take the torrent id and make a link.
-echo '<td sorttable_customkey="4"><a href="https://scenehd.org/details.php?id='.$scenehd_release_exploded[2].'"><img src="images/scenehd-red.png" /></a></td>'; // Dead
+echo '<td sorttable_customkey="4"><a href="'.$scenehd_url.'details.php?id='.$scenehd_release_exploded[2].'"><img src="images/scenehd-red.png" alt="SHD-Red" /></a></td>'; // Dead
  
 } else { // it is seeded.
  
-echo '<td sorttable_customkey="1"><a href="https://scenehd.org/details.php?id='.$scenehd_release_exploded[2].'"><img src="images/scenehd.png" /></a></td>'; // All OKAY
+echo '<td sorttable_customkey="1"><a href="'.$scenehd_url.'details.php?id='.$scenehd_release_exploded[2].'"><img src="images/scenehd.png" alt="SHD-Green" /></a></td>'; // All OKAY
  
 }
  
@@ -58,7 +58,7 @@ if (in_array($release_name,$scenehd_reqlist)) {
  
 // release is requested - please upload!
 // generate link to search result for that request.
-echo '<td sorttable_customkey="3"><a href="https://scenehd.org/requests.php?search='.$release_name.'"><img src="images/scenehd-blue.png" /></a></td>'; // Requested
+echo '<td sorttable_customkey="3"><a href="'.$scenehd_url.'requests.php?search='.$release_name.'"><img src="images/scenehd-blue.png" alt="SHD-Blue" /></a></td>'; // Requested
 $warning_scenehd_request = TRUE;
 
 } else {
@@ -66,7 +66,7 @@ $warning_scenehd_request = TRUE;
 // so it's not on scenehd at all. Please upload it!
 // note, it could still be in a pack somewhere on scenehd,
 // ... so search those too before uploading!
-echo '<td sorttable_customkey="2"><img src="images/scenehd-yellow.png" /></td>'; // Not Found
+echo '<td sorttable_customkey="2"><a href="'.$scenehd_url.'#search='.$movie_name.'" title="Search SceneHD for movie name"><img src="images/scenehd-yellow.png" alt="SHD-Yellow" /></a></td>'; // Not Found
  
 }
  

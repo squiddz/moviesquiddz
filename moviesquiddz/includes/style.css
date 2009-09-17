@@ -1,18 +1,18 @@
-div {
- font-family: Calibri, Trebuchet MS, Arial, Sans-Serif;
+body{
+	font-family: Calibri, Trebuchet MS, Arial, Sans-Serif;
 }
 
-div.header {
- text-align: center;
- margin-top: 50px;
+div.header{
+	text-align: center;
+	margin-top: 50px;
 }
 
-div.files {
- text-align: left;
- line-height:15px;
+div.files{
+	text-align: left;
+	line-height:15px;
 }
 
-div.warningbar {
+div.warningbar{
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -23,12 +23,16 @@ div.warningbar {
 	border-bottom: 3px dotted #000;
 }
 
-span.left {
+span{
+	cursor: pointer;
+}
+
+span.left{
 	float:left;
 	margin-left: 10px;
 }
 
-span.right {
+span.right{
 	float: right;
 	margin-right: 2px;
 }
@@ -42,11 +46,23 @@ img.lowdown {
 }
 
 a {
- color: #6CCC26;
- text-decoration:none;
- outline:none;
+	color: #6CCC26;
+	text-decoration:none;
+	outline:none;
 }
 
 a:hover {
- color: #2577EA;
+	color: #2577EA;
+}
+
+table.sortable {
+	text-align:center;
+	border:5px solid #2577EA;
+}
+
+table.sortable thead {
+    background-color:#eee;
+    color:#666666;
+    font-weight: bold;
+    cursor: default;
 }
